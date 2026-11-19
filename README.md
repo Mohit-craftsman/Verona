@@ -16,7 +16,7 @@
   while <b>Juliet</b> (base station receiver) listens, acknowledges, and renders real-time telemetry on an LCD.
 </p>
 
-[Quickstart](#-quickstart--flashing-guide) • [Circuit Schematics](#-project-showcase--circuit-schematics) • [Pinout Reference](#-pin-mapping--wiring-reference) • [Limitations](LIMITATIONS.md) • [Deployment Guide](DEPLOYMENT_GUIDE.md)
+[Quickstart](#-quickstart--flashing-guide) • [Circuit Schematics](#-project-showcase--circuit-schematics) • [Romeo Troubleshooting](TROUBLESHOOTING_ROMEO.md) • [Juliet Troubleshooting](TROUBLESHOOTING_JULIET.md) • [Deployment Guide](DEPLOYMENT_GUIDE.md) • [Limitations](LIMITATIONS.md)
 
 ---
 
@@ -31,6 +31,7 @@
 - [⚡ Pin Mapping & Wiring Reference](#-pin-mapping--wiring-reference)
 - [📡 Radio Protocol & Packet Specification](#-radio-protocol--packet-specification)
 - [🚀 Quickstart & Flashing Guide](#-quickstart--flashing-guide)
+- [🔍 Hardware Troubleshooting Guides](#-hardware-troubleshooting-guides)
 - [📂 Project Structure](#-project-structure)
 - [⚖️ Engineering Scope & Limitations](#️-engineering-scope--limitations)
 - [🔮 Future Scope & Roadmap](#-future-scope--roadmap)
@@ -289,6 +290,15 @@ For a full step-by-step assembly and hardware calibration walkthrough, see [DEPL
 
 ---
 
+## 🔍 Hardware Troubleshooting Guides
+
+Dedicated, field-tested troubleshooting documents are available for both nodes:
+
+* [**TROUBLESHOOTING_ROMEO.md**](TROUBLESHOOTING_ROMEO.md): SPI init failures (`LoRa Error`), GPS satellite acquisition fixes, MT3608 boost converter calibration, battery brownouts, and TP4056 USB charging safety rules.
+* [**TROUBLESHOOTING_JULIET.md**](TROUBLESHOOTING_JULIET.md): PlatformIO toolchain caching, 16x2 LCD contrast trimmer adjustment, non-default I2C address resolution (`0x26` vs `0x27`), and link budget diagnostics.
+
+---
+
 ## 📂 Project Structure
 
 ```text
@@ -298,6 +308,8 @@ Verona/
 ├── README.md                       # Main architectural documentation & overview
 ├── DEPLOYMENT_GUIDE.md             # Hardware assembly, MT3608 calibration & flashing guide
 ├── LIMITATIONS.md                  # Honest engineering design scope & boundaries
+├── TROUBLESHOOTING_ROMEO.md        # Dedicated Romeo (Transmitter) troubleshooting guide
+├── TROUBLESHOOTING_JULIET.md       # Dedicated Juliet (Receiver) troubleshooting guide
 ├── platformio.ini                  # Multi-environment PlatformIO build configuration
 ├── include/                        # Unified C++ header definitions
 │   └── config.h                    # Master pin definitions, frequencies & timeouts

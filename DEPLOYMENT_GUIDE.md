@@ -143,7 +143,7 @@ Refer to schematic: `docs/Juliet_Circuit_Diagram.svg` and hardware photo below:
    * **LiquidCrystal_I2C** by *Frank de Brabander* (v1.1.2)
 4. Flash Romeo:
    * Open `firmware/Romeo/Romeo.ino`
-   * Select Board: `DOIT ESP32 DEVKIT V1` (or your ESP32 model)
+   * Select Board: `DOIT ESP32 DEVKIT V1` (or your model)
    * Click **Upload**
 5. Flash Juliet:
    * Open `firmware/Juliet/Juliet.ino`
@@ -184,6 +184,12 @@ Refer to schematic: `docs/Juliet_Circuit_Diagram.svg` and hardware photo below:
 ---
 
 ## ❓ Troubleshooting
+
+For comprehensive, in-depth root cause analysis and step-by-step resolution procedures for each node, consult the dedicated guides:
+* 📡 [**TROUBLESHOOTING_ROMEO.md**](TROUBLESHOOTING_ROMEO.md) — For Romeo (Transmitter) power supply, GPS satellite fix acquisition, MT3608 calibration, and SPI LoRa issues.
+* 🖥️ [**TROUBLESHOOTING_JULIET.md**](TROUBLESHOOTING_JULIET.md) — For Juliet (Receiver) LCD contrast, I2C address detection (`0x26`), and PlatformIO caching.
+
+### Quick Reference Matrix
 
 | Issue | Probable Cause | Remedy |
 | :--- | :--- | :--- |
