@@ -89,7 +89,13 @@ Refer to schematic: `docs/Romeo_Circuit_Diagram.svg` and hardware photo below:
 
 ### Node B: Juliet (Receiver & Base Station)
 
-Refer to schematic: `docs/Juliet_Circuit_Diagram.svg`
+Refer to schematic: `docs/Juliet_Circuit_Diagram.svg` and hardware photo below:
+
+<p align="center">
+  <img src="docs/images/juliet_receiver_top.jpg" alt="Juliet Hardware Breadboard Wiring" width="85%">
+  <br>
+  <em>Figure: Top-down wiring reference of the Juliet receiver and 16x2 I2C LCD on the breadboard</em>
+</p>
 
 | Source Component & Pin | Target Component & Pin | Function / Wire Net |
 | :--- | :--- | :--- |
