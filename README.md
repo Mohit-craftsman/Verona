@@ -101,6 +101,7 @@ U4 B- and OUT- are different nets joined only by the protection circuit: never c
 
 ## Firmware
 
+### Arduino IDE
 | Sketch | Board | Purpose |
 |--------|-------|---------|
 | `firmware/Romeo/Romeo.ino` | Romeo ESP32 | Reads the GPS on UART2 (GPIO32/33), sends a PING with the position every 3 s once a fix is valid, waits for the ACK |
@@ -109,6 +110,22 @@ U4 B- and OUT- are different nets joined only by the protection circuit: never c
 1. Install **Arduino IDE 2.x** and the **esp32 by Espressif** board package (board: *ESP32 Dev Module*).
 2. Install the libraries **LoRa** (Sandeep Mistry), **TinyGPSPlus** (Mikal Hart) and **LiquidCrystal I2C** (Frank de Brabander).
 3. Open each sketch folder, upload to its board, and open the Serial Monitor at **9600 baud**.
+
+### PlatformIO
+The repository also includes PlatformIO environments configured in `platformio.ini`:
+```bash
+# Upload Romeo firmware (GPS transmitter)
+pio run -e romeo --target upload
+pio device monitor -b 9600
+
+# Upload Juliet firmware (LCD receiver)
+pio run -e juliet --target upload
+pio device monitor -b 9600
+
+# Run I2C Scanner to detect LCD address
+pio run -e i2c_scan --target upload
+pio device monitor -b 9600
+```
 
 ## Expected output
 
