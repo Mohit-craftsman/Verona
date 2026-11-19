@@ -7,8 +7,8 @@ This guide walks you through safely assembling, calibrating, wiring, and flashin
 ## ⚠️ Critical Safety & Pre-Assembly Rules
 
 > [!CAUTION]
-> **1. NEVER power up an SX1278 (Ra-02) LoRa module without its 433 MHz antenna connected.**
-> Operating the RF transmitter without an antenna reflects power back into the power amplifier (high VSWR), which can permanently destroy the LoRa module within seconds.
+> **1. Ensure the 433 MHz u.FL Antenna Cable is securely snapped onto the Ra-02 before powering up.**
+> Operating the RF transmitter without an antenna/cable attached reflects RF power back into the power amplifier (high VSWR). The u.FL pigtail cable includes an integrated antenna element attached by default, which is fully sufficient for transmission and reception. An external SMA rubber-duck whip antenna is **optional** (for extended line-of-sight range).
 >
 > **2. Calibrate the MT3608 Boost Converter BEFORE connecting it to the ESP32.**
 > MT3608 modules straight from the factory are often adjusted to output 12V–28V. Connecting an uncalibrated boost converter will permanently destroy the ESP32!
@@ -164,7 +164,7 @@ Refer to schematic: `docs/Juliet_Circuit_Diagram.svg` and hardware photo below:
    * *If LCD is blank or shows white boxes:* Gently turn the blue trimpot on the back of the I2C backpack until text appears. If still blank, verify the I2C address (set to `0x26` in code as confirmed by scanner; standard modules may use `0x27` or `0x3F`).
 
 2. **Romeo First Boot:**
-   * Attach the 433 MHz antenna and ceramic GPS antenna.
+   * Ensure the 433 MHz u.FL antenna cable is snapped into the Ra-02 (external SMA rubber-duck whip antenna is optional) and connect the ceramic GPS antenna.
    * Place Romeo near an open window or outdoors for first GPS satellite lock (30–60 seconds).
    * Verify Romeo serial output:
      ```

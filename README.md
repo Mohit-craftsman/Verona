@@ -164,9 +164,12 @@ Full vector schematic displaying the USB-powered ESP32 base station, SX1278 Ra-0
 | **SW1**| SPST Switch | Slide or toggle rated 1A+ | System power toggle (OFF during charging) |
 | **U5** | MT3608 Module | DC-DC Step-Up (boost to 5.00 V) | Voltage booster to ESP32 VIN |
 | **C1** | Electrolytic Cap | 100 µF, 10V+ | Decoupling buffer across Ra-02 3V3/GND |
-| **J1** | RF Pigtail Cable | IPEX (u.FL) to SMA-Female | Antenna connection for Ra-02 |
-| **ANT1**| Whip Antenna | 433 MHz SMA rubber-duck (50 Ω) | RF transmission antenna |
+| **J1** | u.FL Antenna Cable | IPEX (u.FL) RF pigtail with integrated element | Primary 433 MHz RF antenna (attached by default) |
+| **ANT1**| Rubber-Duck Antenna | 433 MHz SMA whip antenna (50 Ω) | **Optional**: External high-gain antenna for extended range |
 | **ANT2**| Ceramic Antenna | Patch antenna with u.FL cable | GPS satellite reception antenna |
+
+> [!NOTE]
+> **Antenna Note:** The u.FL (IPEX) cable snapped onto the Ra-02 is already equipped with an integrated monopole antenna element by default, which provides solid RF transmission and reception out of the box. An external SMA rubber-duck whip antenna (`ANT1`) is **optional** and only recommended if extreme long-range field testing is desired.
 
 ### Juliet (Receiver / Base Station)
 
@@ -176,8 +179,8 @@ Full vector schematic displaying the USB-powered ESP32 base station, SX1278 Ra-0
 | **U2** | Ai-Thinker Ra-02 | Semtech SX1278, 433 MHz, SPI | Long-range RF transceiver |
 | **U3** | 16x2 LCD Display | HD44780 + PCF8574 I2C backpack (5V) | On-station coordinates display |
 | **C1** | Electrolytic Cap | 100 µF, 10V+ | Decoupling buffer across Ra-02 3V3/GND |
-| **J1** | RF Pigtail Cable | IPEX (u.FL) to SMA-Female | Antenna connection for Ra-02 |
-| **ANT1**| Whip Antenna | 433 MHz SMA rubber-duck (50 Ω) | RF reception antenna |
+| **J1** | u.FL Antenna Cable | IPEX (u.FL) RF pigtail with integrated element | Primary 433 MHz RF antenna (attached by default) |
+| **ANT1**| Rubber-Duck Antenna | 433 MHz SMA whip antenna (50 Ω) | **Optional**: External high-gain antenna for base station |
 | **J3** | USB Cable | Micro-USB or USB-C data cable | 5V PC power & serial telemetry link |
 
 ---

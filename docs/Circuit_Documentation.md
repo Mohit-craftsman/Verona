@@ -16,12 +16,12 @@ Board: ESP32 Dev Module (classic ESP32). There is no SIM or GSM module in this p
 | SW1 | Power switch | In series with the positive line |
 | C1 | 100 uF electrolytic, 10 V or higher | Across Ra-02 3.3V and GND |
 | D1 | 1N5819 Schottky diode (optional) | MT3608 OUT+ to VIN, stripe toward VIN |
-| ANT1 | 433 MHz SMA rubber-duck antenna | |
-| J1 | u.FL (IPEX) to SMA-female bulkhead pigtail | 50 ohm coax |
+| J1 | u.FL (IPEX) RF cable with integrated antenna | 50 ohm coax with monopole element (attached by default) |
+| ANT1 | 433 MHz SMA rubber-duck antenna (optional) | External antenna for extended range |
 | ANT2 | GPS ceramic patch antenna with u.FL cable | |
 
 ### Juliet (receiver / base)
-U1 ESP32 Dev Module, U2 Ra-02 on breakout, U3 16x2 LCD with I2C backpack (HD44780 + PCF8574), C1 100 uF, ANT1 433 MHz antenna, J1 pigtail, J3 USB data cable (power and Serial Monitor), breadboard, 14 jumper wires.
+U1 ESP32 Dev Module, U2 Ra-02 on breakout, U3 16x2 LCD with I2C backpack (HD44780 + PCF8574), C1 100 uF, J1 u.FL antenna cable (ANT1 rubber-duck antenna optional), J3 USB data cable (power and Serial Monitor), breadboard, 14 jumper wires.
 
 ## 2. Netlists
 
