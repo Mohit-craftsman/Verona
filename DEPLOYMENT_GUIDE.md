@@ -35,6 +35,12 @@ This guide walks you through safely assembling, calibrating, wiring, and flashin
 [3.7V Li-ion Cell] ──> [TP4056 B+/B-] ──(OUT+/OUT-)──> [SW1 Switch] ──> [MT3608 IN+/IN-]
 ```
 
+<p align="center">
+  <img src="docs/images/romeo_power_supply.jpg" alt="Romeo Power Supply Hardware Assembly" width="85%">
+  <br>
+  <em>Figure: Physical power supply setup showing TP4056 (top-left) connected to MT3608 boost converter (bottom-right)</em>
+</p>
+
 1. Solder or connect your **3.7V 18650 / Li-Po cell** to the `B+` and `B-` terminals of the **TP4056** charger module.
 2. Connect `TP4056 OUT+` to one terminal of **SW1 (SPST Switch)**.
 3. Connect the other terminal of **SW1** to `MT3608 IN+`.
@@ -51,7 +57,13 @@ This guide walks you through safely assembling, calibrating, wiring, and flashin
 
 ### Node A: Romeo (Transmitter)
 
-Refer to schematic: `docs/Romeo_Circuit_Diagram.svg`
+Refer to schematic: `docs/Romeo_Circuit_Diagram.svg` and hardware photo below:
+
+<p align="center">
+  <img src="docs/images/romeo_transmitter_top.jpg" alt="Romeo Hardware Breadboard Wiring" width="85%">
+  <br>
+  <em>Figure: Top-down wiring reference of the Romeo node on the breadboard</em>
+</p>
 
 | Source Component & Pin | Target Component & Pin | Function / Wire Net |
 | :--- | :--- | :--- |

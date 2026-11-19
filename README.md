@@ -94,18 +94,40 @@ Modern search-and-rescue, wilderness trekking, drone recovery, and agricultural 
 
 ## 📸 Project Showcase & Circuit Schematics
 
-> [!NOTE]
-> *Hardware photo gallery is currently being shot and rendered. Until live hardware studio photography is pushed, the production-grade, verified **Rev 1.1 vector circuit schematics** are embedded below as full visual references.*
+### 1. Physical Hardware Prototype (Romeo Transmitter)
+Real-world physical breadboard build of the **Romeo (Transmitter)** node, highlighting the ESP32 microcontroller, Ai-Thinker Ra-02 LoRa transceiver, u-blox NEO-6M GPS with ceramic patch antenna, and the dual-stage TP4056 + MT3608 power chain.
 
-### 1. Romeo (Transmitter Node) — Schematic Rev 1.1
-Full schematic displaying the TP4056 charger, MT3608 boost converter, ESP32 microcontroller, SX1278 Ra-02 transceiver, and GY-GPS6MV2 module with power rails, decoupling capacitor, and RF interfaces.
+<p align="center">
+  <img src="docs/images/romeo_transmitter_top.jpg" alt="Romeo Transmitter Prototype - Top View" width="90%">
+  <br>
+  <em>Figure 1: Romeo Field Node Assembly — ESP32 (left), Ra-02 433 MHz LoRa transceiver (center), and u-blox NEO-6M GPS with ceramic patch antenna (right).</em>
+</p>
+
+<p align="center">
+  <img src="docs/images/romeo_transmitter_side.jpg" alt="Romeo Transmitter Prototype - Side Profile" width="90%">
+  <br>
+  <em>Figure 2: Breadboard side profile showcasing clean pin header seating, RF u.FL coaxial pigtail, and point-to-point interconnects.</em>
+</p>
+
+<p align="center">
+  <img src="docs/images/romeo_power_supply.jpg" alt="Romeo Power Supply - TP4056 and MT3608" width="90%">
+  <br>
+  <em>Figure 3: Power supply assembly — TP4056 Li-ion charger with battery protection (top-left) feeding the MT3608 DC-DC step-up boost converter (bottom-right) calibrated to 5.00 V.</em>
+</p>
+
+---
+
+### 2. Circuit Schematics (Production Rev 1.1)
+
+#### Romeo (Transmitter Node) — Schematic Rev 1.1
+Full vector schematic displaying the TP4056 charger, MT3608 boost converter, ESP32 microcontroller, SX1278 Ra-02 transceiver, and GY-GPS6MV2 module with power rails, decoupling capacitor, and RF interfaces.
 
 <p align="center">
   <img src="docs/Romeo_Circuit_Diagram.svg" alt="Project Verona - Romeo Transmitter Circuit Diagram" width="100%">
 </p>
 
-### 2. Juliet (Receiver / Base Station) — Schematic Rev 1.1
-Full schematic displaying the USB-powered ESP32 base station, SX1278 Ra-02 transceiver, and 16x2 HD44780 LCD display with PCF8574 I2C backpack.
+#### Juliet (Receiver / Base Station) — Schematic Rev 1.1
+Full vector schematic displaying the USB-powered ESP32 base station, SX1278 Ra-02 transceiver, and 16x2 HD44780 LCD display with PCF8574 I2C backpack.
 
 <p align="center">
   <img src="docs/Juliet_Circuit_Diagram.svg" alt="Project Verona - Juliet Receiver Circuit Diagram" width="100%">
@@ -270,7 +292,11 @@ Verona/
 │   │   └── Romeo.ino               # Romeo Arduino sketch
 │   └── Juliet/
 │       └── Juliet.ino              # Juliet Arduino sketch
-├── docs/                           # Schematics and technical documentation
+├── docs/                           # Schematics, images and technical documentation
+│   ├── images/                     # Real hardware prototype photography
+│   │   ├── romeo_transmitter_top.jpg
+│   │   ├── romeo_transmitter_side.jpg
+│   │   └── romeo_power_supply.jpg
 │   ├── Romeo_Circuit_Diagram.svg   # Romeo schematic (Rev 1.1)
 │   ├── Juliet_Circuit_Diagram.svg  # Juliet schematic (Rev 1.1)
 │   └── Circuit_Documentation.md    # Detailed circuit analysis & electrical notes
@@ -298,6 +324,7 @@ In the spirit of honest and transparent engineering, Project Verona documents al
 - [ ] **Web Telemetry Dashboard:** Juliet bridging received GPS packets over local Wi-Fi or WebSockets to display real-time Leaflet / OpenStreetMap pins on a tablet or laptop.
 - [ ] **Multi-Node Mesh (LoRa APRS):** Extending from point-to-point ping-pong to a multi-hop mesh network for multi-agent asset tracking.
 - [ ] **Solar Energy Harvesting:** Integrating a 5V/6V solar cell and MPPT controller into Romeo for autonomous off-grid operation.
+- [ ] **Juliet Base Station Hardware Assembly:** Physical build and enclosure for the receiver with 16x2 I2C LCD and external antenna mount.
 
 ---
 
