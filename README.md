@@ -16,7 +16,7 @@
   while <b>Juliet</b> (base station receiver) listens, acknowledges, and renders real-time telemetry on an LCD.
 </p>
 
-[Quickstart](#-quickstart--flashing-guide) • [Circuit Schematics](#-project-showcase--circuit-schematics) • [Romeo Troubleshooting](TROUBLESHOOTING_ROMEO.md) • [Juliet Troubleshooting](TROUBLESHOOTING_JULIET.md) • [Deployment Guide](DEPLOYMENT_GUIDE.md) • [Limitations](LIMITATIONS.md)
+[Quickstart](#-quickstart--flashing-guide) • [Hardware Showcase](#-hardware-showcase--circuit-schematics) • [Romeo Troubleshooting](TROUBLESHOOTING_ROMEO.md) • [Juliet Troubleshooting](TROUBLESHOOTING_JULIET.md) • [Deployment Guide](DEPLOYMENT_GUIDE.md) • [Limitations](LIMITATIONS.md)
 
 ---
 
@@ -25,8 +25,8 @@
 ## 📑 Table of Contents
 - [📖 Overview & Operational Narrative](#-overview--operational-narrative)
 - [🎯 Problem Statement](#-problem-statement)
-- [💡 Proposed Architecture](#-proposed-architecture)
-- [📸 Project Showcase & Circuit Schematics](#-project-showcase--circuit-schematics)
+- [💡 Proposed Solution](#-proposed-solution)
+- [📸 Hardware Showcase & Circuit Schematics](#-hardware-showcase--circuit-schematics)
 - [🛠️ Hardware Stack & Bill of Materials](#️-hardware-stack--bill-of-materials)
 - [⚡ Pin Mapping & Wiring Reference](#-pin-mapping--wiring-reference)
 - [📡 Radio Protocol & Packet Specification](#-radio-protocol--packet-specification)
@@ -51,16 +51,17 @@ Modern search-and-rescue, wilderness trekking, drone recovery, and agricultural 
 
 ## 🎯 Problem Statement
 
-| Operational Challenge | Conventional Limitations | Project Verona Solution |
-| :--- | :--- | :--- |
-| **Zero Cellular Coverage** | GSM/4G trackers stop transmitting when outside cell tower reach | Point-to-point sub-GHz LoRa RF provides km-scale link budget without external infrastructure |
-| **High Subscription Costs** | Commercial satellite trackers (e.g., Iridium, Garmin inReach) require monthly data fees | 100% license-free ISM 433 MHz band operation with zero recurring expenses |
-| **Power Inefficiency** | High-draw cellular modules exhaust portable batteries within hours | Power-managed ESP32 + LoRa link enables multi-hour field autonomy on a single 18650 cell |
-| **Field Diagnostic Visibility**| Headless trackers offer no physical status feedback to ground teams | Integrated 16x2 I2C display on Juliet shows instant coordinates without requiring a PC |
+In wilderness exploration, disaster relief, drone telemetry, and remote search-and-rescue operations, cellular networks (4G/5G) and public Wi-Fi infrastructure are frequently unavailable. Commercial satellite-based emergency beacons (such as Garmin inReach or Iridium SPOT) offer coverage but impose expensive recurring monthly subscriptions, proprietary closed ecosystems, and heavy power drains that limit scalability for small teams, hobbyists, and grassroots first responders.
+
+Furthermore, off-the-shelf consumer GPS trackers lack local field diagnostic visibility and point-to-point independence. Without an external cloud server or internet gateway, field personnel cannot directly view or verify remote coordinates in real time, while power-hungry radios quickly deplete portable battery packs, leaving rescue teams blind when reliable, off-grid location tracking is most critical.
 
 ---
 
-## 💡 Proposed Architecture
+## 💡 Proposed Solution
+
+Project Verona delivers a decentralized, license-free, long-range telemetry system by pairing dual-core ESP32 microcontrollers with Semtech SX1278 LoRa transceivers operating in the 433 MHz ISM band. The mobile transmitter node (**Romeo**) harvests high-accuracy geospatial coordinates from a u-blox NEO-6M GPS module, packages the telemetry into compact ASCII frames, and broadcasts them across multi-kilometer distances on a single 3.7V Li-ion battery boosted to 5.0V.
+
+At the base camp, the receiving node (**Juliet**) continuously listens for incoming transmissions, computes signal health metrics (RSSI and SNR), and instantly renders live latitude, longitude, and link quality on an onboard HD44780 16x2 I2C LCD without requiring an external computer or network. Juliet immediately echoes an acknowledgment (ACK) frame back to Romeo, verifying bidirectional link integrity and establishing a robust, zero-cost, off-grid telemetry pipeline.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -93,7 +94,7 @@ Modern search-and-rescue, wilderness trekking, drone recovery, and agricultural 
 
 ---
 
-## 📸 Project Showcase & Circuit Schematics
+## 📸 Hardware Showcase & Circuit Schematics
 
 ### 1. Romeo (Field Transmitter Node)
 The mobile field tracker captures satellite fixes via GPS, formats telemetry packets, and broadcasts them over the 433 MHz LoRa channel.
@@ -118,11 +119,10 @@ The mobile field tracker captures satellite fixes via GPS, formats telemetry pac
 </p>
 
 #### 📐 Circuit Schematic (Rev 1.1)
-Full vector schematic displaying the TP4056 charger, MT3608 boost converter, ESP32 microcontroller, SX1278 Ra-02 transceiver, and GY-GPS6MV2 module with power rails, decoupling capacitor, and RF interfaces.
+The full vector circuit schematic is located in the repository at:
+* 📁 **[`docs/Romeo_Circuit_Diagram.svg`](docs/Romeo_Circuit_Diagram.svg)**
 
-<p align="center">
-  <img src="docs/Romeo_Circuit_Diagram.svg" alt="Project Verona - Romeo Transmitter Circuit Diagram" width="100%">
-</p>
+*(For full wiring netlists, pin mappings, and electrical analysis, see [`docs/Circuit_Documentation.md`](docs/Circuit_Documentation.md))*
 
 ---
 
@@ -143,11 +143,10 @@ The USB-powered base station listens for incoming LoRa broadcasts, validates CRC
 </p>
 
 #### 📐 Circuit Schematic (Rev 1.1)
-Full vector schematic displaying the USB-powered ESP32 base station, SX1278 Ra-02 transceiver, and 16x2 HD44780 LCD display with PCF8574 I2C backpack.
+The full vector circuit schematic is located in the repository at:
+* 📁 **[`docs/Juliet_Circuit_Diagram.svg`](docs/Juliet_Circuit_Diagram.svg)**
 
-<p align="center">
-  <img src="docs/Juliet_Circuit_Diagram.svg" alt="Project Verona - Juliet Receiver Circuit Diagram" width="100%">
-</p>
+*(For full wiring netlists, pin mappings, and electrical analysis, see [`docs/Circuit_Documentation.md`](docs/Circuit_Documentation.md))*
 
 ---
 
@@ -246,47 +245,13 @@ The communication link operates on a half-duplex, stop-and-wait ARQ (Automatic R
 
 ## 🚀 Quickstart & Flashing Guide
 
-For a full step-by-step assembly and hardware calibration walkthrough, see [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md).
+Complete step-by-step hardware assembly, MT3608 trimmer calibration, and flashing instructions are detailed in [**DEPLOYMENT_GUIDE.md**](DEPLOYMENT_GUIDE.md):
 
-### Method 1: PlatformIO (Recommended)
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Mohit-craftsman/Verona.git
-   cd Verona
-   ```
-2. Build and upload Romeo (Transmitter):
-   ```bash
-   pio run -e romeo --target upload
-   pio device monitor -b 9600
-   ```
-3. Connect Juliet (Receiver), build and upload:
-   ```bash
-   pio run -e juliet --target upload
-   pio device monitor -b 9600
-   ```
-4. Optional I2C Scanner (to verify LCD backpack address):
-   ```bash
-   pio run -e i2c_scan --target upload
-   pio device monitor -b 9600
-   ```
-
-### Method 2: Arduino IDE
-
-1. Install **Arduino IDE v2.x**.
-2. Add ESP32 board support via Boards Manager:
-   `https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json`
-3. Install required libraries via Library Manager:
-   * `LoRa` by *Sandeep Mistry*
-   * `TinyGPSPlus` by *Mikal Hart*
-   * `LiquidCrystal_I2C` by *Frank de Brabander*
-4. Flash Romeo:
-   * Open `firmware/Romeo/Romeo.ino`
-   * Select Board: `DOIT ESP32 DEVKIT V1` (or your model)
-   * Select Port and click **Upload**
-5. Flash Juliet:
-   * Open `firmware/Juliet/Juliet.ino`
-   * Select Port and click **Upload**
+* [**PlatformIO (Recommended)**](DEPLOYMENT_GUIDE.md#-option-a-platformio-deployment-recommended): Build and flash firmware directly from the project root:
+  * **Romeo (Transmitter):** `pio run -e romeo -t upload` (Monitor: `pio device monitor -b 9600`)
+  * **Juliet (Receiver):** `pio run -e juliet -t upload` (Monitor: `pio device monitor -b 9600`)
+  * **I2C Diagnostic Scanner:** `pio run -e i2c_scan -t upload`
+* [**Arduino IDE**](DEPLOYMENT_GUIDE.md#-option-b-arduino-ide-deployment): Install `LoRa`, `TinyGPSPlus`, and `LiquidCrystal_I2C` libraries; flash `firmware/Romeo/Romeo.ino` and `firmware/Juliet/Juliet.ino` using board target `DOIT ESP32 DEVKIT V1` (9600 baud).
 
 ---
 
