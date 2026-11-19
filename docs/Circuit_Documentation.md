@@ -36,10 +36,10 @@ U1 ESP32 Dev Module, U2 Ra-02 on breakout, U3 16x2 LCD with I2C backpack (HD4478
 | +5V | U5 OUT+ (through D1 if fitted), U1 VIN |
 | GND | U4 OUT-, U5 IN-, U5 OUT-, U1 GND, U2 GND (both pins), U3 GND, C1 (-) |
 | +3V3 | U1 3V3, U2 3.3V, U3 VCC, C1 (+) |
-| LORA_NSS / RST / DIO0 | U2 pin to U1 GPIO5 / GPIO14 / GPIO26 |
-| LORA_SCK / MISO / MOSI | U2 pin to U1 GPIO18 / GPIO19 / GPIO23 |
-| GPS_TX | U3 TX, U1 GPIO32 (UART2 RX) |
-| GPS_RX | U3 RX, U1 GPIO33 (UART2 TX) |
+| LORA_NSS / RST / DIO0 | U2 pin to U1 D5 / D14 / D26 (GPIO5 / GPIO14 / GPIO26) |
+| LORA_SCK / MISO / MOSI | U2 pin to U1 D18 / D19 / D23 (GPIO18 / GPIO19 / GPIO23) |
+| GPS_TX | U3 TX, U1 D32 (UART2 RX, GPIO32) |
+| GPS_RX | U3 RX, U1 D33 (UART2 TX, GPIO33) |
 | RF_LORA | U2 u.FL, J1, ANT1 |
 | RF_GPS | U3 u.FL, ANT2 |
 
@@ -51,9 +51,9 @@ U1 ESP32 Dev Module, U2 Ra-02 on breakout, U3 16x2 LCD with I2C backpack (HD4478
 | +5V (VBUS) | J3 VBUS, U1 5V/VIN, U3 VCC |
 | GND | J3 GND, U1 GND, U2 GND, U3 GND, C1 (-) |
 | +3V3 | U1 3V3, U2 3.3V, C1 (+) |
-| LORA_* | Same six SPI/control nets as Romeo |
-| I2C_SDA | U3 SDA, U1 GPIO21 |
-| I2C_SCL | U3 SCL, U1 GPIO22 |
+| LORA_* | Same six SPI/control nets as Romeo (D5, D14, D26, D18, D19, D23) |
+| I2C_SDA | U3 SDA, U1 D21 (GPIO21) |
+| I2C_SCL | U3 SCL, U1 D22 (GPIO22) |
 | RF_LORA | U2 u.FL, J1, ANT1 |
 
 The LCD backpack pulls SDA and SCL up to its own supply (5 V here). This usually works with an ESP32 but exceeds its 3.3 V pin rating. A 0.96 inch SSD1306 OLED on 3V3 (same four wires) avoids this. The I2C address is 0x27 on most backpacks, 0x3F on some.
@@ -87,8 +87,8 @@ The LCD backpack pulls SDA and SCL up to its own supply (5 V here). This usually
 
 **Signals**
 - All logic is 3.3 V: Ra-02 (3.6 V max), GPS TTL and ESP32 are compatible without level shifters.
-- GPS UART crossover: GPS TX to ESP32 RX (GPIO32), GPS RX to ESP32 TX (GPIO33), 9600 baud.
-- LoRa SPI uses the ESP32 default VSPI pins. GPIO5 (NSS) is a boot strapping pin but idles high, so boot is unaffected.
+- GPS UART crossover: GPS TX to ESP32 RX (D32 / GPIO32), GPS RX to ESP32 TX (D33 / GPIO33), 9600 baud.
+- LoRa SPI uses the ESP32 default VSPI pins (D5, D14, D26, D18, D19, D23). GPIO5/D5 (NSS) is a boot strapping pin but idles high, so boot is unaffected.
 - C1 absorbs the 120 mA transmit pulses so the 3.3 V rail does not dip (a dip causes brownouts and `LoRa Error`).
 
 **RF**

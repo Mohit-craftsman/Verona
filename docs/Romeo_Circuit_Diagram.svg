@@ -95,8 +95,8 @@
 <polyline points="980,782 1240,782" fill="none" stroke="#2E7D32" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
 <text x="1110" y="642" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="bold" fill="#AD1457" text-anchor="middle" font-style="normal">+3V3</text>
 <text x="1110" y="686" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="bold" fill="#212121" text-anchor="middle" font-style="normal">GND</text>
-<text x="1110" y="730" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="bold" fill="#2E7D32" text-anchor="middle" font-style="normal">GPS_TX  →  ESP32 RX</text>
-<text x="1110" y="774" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="bold" fill="#2E7D32" text-anchor="middle" font-style="normal">GPS_RX  ←  ESP32 TX</text>
+<text x="1110" y="730" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="bold" fill="#2E7D32" text-anchor="middle" font-style="normal">GPS_TX  →  D32</text>
+<text x="1110" y="774" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="bold" fill="#2E7D32" text-anchor="middle" font-style="normal">GPS_RX  ←  D33</text>
 <polyline points="340,994 340,1034" fill="none" stroke="#6A1B9A" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="7 5"/>
 <polyline points="340,1094 340,1118" fill="none" stroke="#6A1B9A" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="7 5"/>
 <polyline points="340,1118 340,1142" fill="none" stroke="#6A1B9A" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
@@ -147,35 +147,35 @@
 <circle cx="440" cy="738" r="5.5" fill="#fff" stroke="#1565C0" stroke-width="2.4"/>
 <text x="428" y="743" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#222" text-anchor="end" font-style="normal">NSS</text>
 <circle cx="700" cy="738" r="5.5" fill="#fff" stroke="#1565C0" stroke-width="2.4"/>
-<text x="712" y="743" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#222" text-anchor="start" font-style="normal">GPIO5</text>
+<text x="712" y="743" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#222" text-anchor="start" font-style="normal">D5</text>
 <circle cx="440" cy="782" r="5.5" fill="#fff" stroke="#1565C0" stroke-width="2.4"/>
 <text x="428" y="787" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#222" text-anchor="end" font-style="normal">RST</text>
 <circle cx="700" cy="782" r="5.5" fill="#fff" stroke="#1565C0" stroke-width="2.4"/>
-<text x="712" y="787" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#222" text-anchor="start" font-style="normal">GPIO14</text>
+<text x="712" y="787" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#222" text-anchor="start" font-style="normal">D14</text>
 <circle cx="440" cy="826" r="5.5" fill="#fff" stroke="#1565C0" stroke-width="2.4"/>
 <text x="428" y="831" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#222" text-anchor="end" font-style="normal">DIO0</text>
 <circle cx="700" cy="826" r="5.5" fill="#fff" stroke="#1565C0" stroke-width="2.4"/>
-<text x="712" y="831" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#222" text-anchor="start" font-style="normal">GPIO26</text>
+<text x="712" y="831" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#222" text-anchor="start" font-style="normal">D26</text>
 <circle cx="440" cy="870" r="5.5" fill="#fff" stroke="#1565C0" stroke-width="2.4"/>
 <text x="428" y="875" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#222" text-anchor="end" font-style="normal">SCK</text>
 <circle cx="700" cy="870" r="5.5" fill="#fff" stroke="#1565C0" stroke-width="2.4"/>
-<text x="712" y="875" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#222" text-anchor="start" font-style="normal">GPIO18</text>
+<text x="712" y="875" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#222" text-anchor="start" font-style="normal">D18</text>
 <circle cx="440" cy="914" r="5.5" fill="#fff" stroke="#1565C0" stroke-width="2.4"/>
 <text x="428" y="919" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#222" text-anchor="end" font-style="normal">MISO</text>
 <circle cx="700" cy="914" r="5.5" fill="#fff" stroke="#1565C0" stroke-width="2.4"/>
-<text x="712" y="919" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#222" text-anchor="start" font-style="normal">GPIO19</text>
+<text x="712" y="919" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#222" text-anchor="start" font-style="normal">D19</text>
 <circle cx="440" cy="958" r="5.5" fill="#fff" stroke="#1565C0" stroke-width="2.4"/>
 <text x="428" y="963" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#222" text-anchor="end" font-style="normal">MOSI</text>
 <circle cx="700" cy="958" r="5.5" fill="#fff" stroke="#1565C0" stroke-width="2.4"/>
-<text x="712" y="963" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#222" text-anchor="start" font-style="normal">GPIO23</text>
+<text x="712" y="963" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#222" text-anchor="start" font-style="normal">D23</text>
 <circle cx="980" cy="650" r="5.5" fill="#fff" stroke="#AD1457" stroke-width="2.4"/>
 <text x="968" y="655" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#222" text-anchor="end" font-style="normal">3V3</text>
 <circle cx="980" cy="694" r="5.5" fill="#fff" stroke="#212121" stroke-width="2.4"/>
 <text x="968" y="699" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#222" text-anchor="end" font-style="normal">GND</text>
 <circle cx="980" cy="738" r="5.5" fill="#fff" stroke="#2E7D32" stroke-width="2.4"/>
-<text x="968" y="743" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#222" text-anchor="end" font-style="normal">GPIO32 · RX</text>
+<text x="968" y="743" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#222" text-anchor="end" font-style="normal">D32</text>
 <circle cx="980" cy="782" r="5.5" fill="#fff" stroke="#2E7D32" stroke-width="2.4"/>
-<text x="968" y="787" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#222" text-anchor="end" font-style="normal">GPIO33 · TX</text>
+<text x="968" y="787" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#222" text-anchor="end" font-style="normal">D33</text>
 <circle cx="1240" cy="650" r="5.5" fill="#fff" stroke="#AD1457" stroke-width="2.4"/>
 <text x="1252" y="655" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#222" text-anchor="start" font-style="normal">VCC</text>
 <circle cx="1240" cy="694" r="5.5" fill="#fff" stroke="#212121" stroke-width="2.4"/>
@@ -192,8 +192,10 @@
 <text x="1340" y="806" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" fill="#222" text-anchor="middle" font-style="normal">u.FL</text>
 <text x="254" y="944" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" fill="#5B6573" text-anchor="start" font-style="italic">DIO1–DIO5 not used</text>
 <text x="254" y="962" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" fill="#5B6573" text-anchor="start" font-style="italic">(2.54 mm breakout)</text>
-<text x="880" y="876" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" fill="#5B6573" text-anchor="middle" font-style="italic">3V3 and GND are single nets,</text>
-<text x="880" y="894" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" fill="#5B6573" text-anchor="middle" font-style="italic">drawn on both sides for clarity</text>
+<text x="1110" y="860" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" fill="#5B6573" text-anchor="middle" font-style="italic">D32 / D33: plain GPIO used as</text>
+<text x="1110" y="878" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" fill="#5B6573" text-anchor="middle" font-style="italic">UART2 in software; not the</text>
+<text x="1110" y="896" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" fill="#5B6573" text-anchor="middle" font-style="italic">board's RX2 / TX2 pins.</text>
+<text x="1110" y="914" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11.5" font-weight="normal" fill="#5B6573" text-anchor="middle" font-style="italic">Dn = board silkscreen = GPIOn</text>
 <rect x="1000" y="110" width="860" height="30" rx="4" fill="#1F3A5F" stroke="#1F3A5F" stroke-width="1"/>
 <text x="1014" y="131" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" fill="#fff" text-anchor="start" font-style="normal">BILL OF MATERIALS — ROMEO (TRANSMITTER)</text>
 <rect x="1000" y="140" width="860" height="26" rx="0" fill="#DDE6F0" stroke="#9AA7B8" stroke-width="1"/>
@@ -275,35 +277,23 @@
 <rect x="1500" y="470" width="360" height="560" rx="6" fill="#FFFDF5" stroke="#C9B458" stroke-width="1.6"/>
 <text x="1514" y="496" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#7A6A1D" text-anchor="start" font-style="normal">BUILD NOTES</text>
 <text x="1514" y="522" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" fill="#7A6A1D" text-anchor="start" font-style="normal">1.</text>
-<text x="1534" y="522" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#222" text-anchor="start" font-style="normal">Set U5 to 5.0 V with a multimeter before</text>
-<text x="1534" y="541" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#222" text-anchor="start" font-style="normal">connecting it to U1.</text>
-<text x="1514" y="567" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" fill="#7A6A1D" text-anchor="start" font-style="normal">2.</text>
-<text x="1534" y="567" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#222" text-anchor="start" font-style="normal">Battery − goes to U4 B− only. All load</text>
-<text x="1534" y="586" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#222" text-anchor="start" font-style="normal">grounds use OUT−. Never join B− and</text>
-<text x="1534" y="605" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#222" text-anchor="start" font-style="normal">OUT−.</text>
-<text x="1514" y="631" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" fill="#7A6A1D" text-anchor="start" font-style="normal">3.</text>
-<text x="1534" y="631" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#222" text-anchor="start" font-style="normal">Switch SW1 off while charging through</text>
-<text x="1534" y="650" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#222" text-anchor="start" font-style="normal">J2.</text>
-<text x="1514" y="676" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" fill="#7A6A1D" text-anchor="start" font-style="normal">4.</text>
-<text x="1534" y="676" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#222" text-anchor="start" font-style="normal">Fit the 433 MHz antenna to U2 before</text>
-<text x="1534" y="695" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#222" text-anchor="start" font-style="normal">applying power.</text>
-<text x="1514" y="721" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" fill="#7A6A1D" text-anchor="start" font-style="normal">5.</text>
-<text x="1534" y="721" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#222" text-anchor="start" font-style="normal">GPS TX goes to GPIO32 and GPS RX to</text>
-<text x="1534" y="740" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#222" text-anchor="start" font-style="normal">GPIO33 (TX and RX cross over).</text>
-<text x="1514" y="766" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" fill="#7A6A1D" text-anchor="start" font-style="normal">6.</text>
-<text x="1534" y="766" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#222" text-anchor="start" font-style="normal">D1 is optional. If omitted, wire U5 OUT+</text>
-<text x="1534" y="785" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#222" text-anchor="start" font-style="normal">straight to VIN. Fit it to allow USB and</text>
-<text x="1534" y="804" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#222" text-anchor="start" font-style="normal">battery to be connected together.</text>
-<text x="1514" y="830" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" fill="#7A6A1D" text-anchor="start" font-style="normal">7.</text>
-<text x="1534" y="830" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#222" text-anchor="start" font-style="normal">U2 and U3 signals are 3.3 V only. Never</text>
-<text x="1534" y="849" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#222" text-anchor="start" font-style="normal">connect U2 to 5 V.</text>
-<text x="1514" y="875" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" fill="#7A6A1D" text-anchor="start" font-style="normal">8.</text>
-<text x="1534" y="875" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#222" text-anchor="start" font-style="normal">On the breadboard, use the + and − rails</text>
-<text x="1534" y="894" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#222" text-anchor="start" font-style="normal">for 3V3 and GND so U2, U3 and C1 share</text>
-<text x="1534" y="913" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#222" text-anchor="start" font-style="normal">them.</text>
-<text x="1514" y="939" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" fill="#7A6A1D" text-anchor="start" font-style="normal">9.</text>
-<text x="1534" y="939" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#222" text-anchor="start" font-style="normal">Place C1 right next to U2's 3.3V and GND</text>
-<text x="1534" y="958" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#222" text-anchor="start" font-style="normal">pins.</text>
+<text x="1534" y="522" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#222" text-anchor="start" font-style="normal">Set U5 to 5.0 V with a multimeter before connecting it to U1.</text>
+<text x="1514" y="552" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" fill="#7A6A1D" text-anchor="start" font-style="normal">2.</text>
+<text x="1534" y="552" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#222" text-anchor="start" font-style="normal">Battery − goes to U4 B− only. All load grounds use OUT−. Never join B− and OUT−.</text>
+<text x="1514" y="592" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" fill="#7A6A1D" text-anchor="start" font-style="normal">3.</text>
+<text x="1534" y="592" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#222" text-anchor="start" font-style="normal">Switch SW1 off while charging through J2.</text>
+<text x="1514" y="622" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" fill="#7A6A1D" text-anchor="start" font-style="normal">4.</text>
+<text x="1534" y="622" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#222" text-anchor="start" font-style="normal">Fit the 433 MHz antenna to U2 before applying power.</text>
+<text x="1514" y="652" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" fill="#7A6A1D" text-anchor="start" font-style="normal">5.</text>
+<text x="1534" y="652" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#222" text-anchor="start" font-style="normal">GPS TX goes to D32 and GPS RX to D33 (TX and RX cross over). D32/D33 are ordinary pins, not the board's RX2/TX2.</text>
+<text x="1514" y="702" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" fill="#7A6A1D" text-anchor="start" font-style="normal">6.</text>
+<text x="1534" y="702" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#222" text-anchor="start" font-style="normal">D1 is optional. If omitted, wire U5 OUT+ straight to VIN. Fit it to allow USB and battery together.</text>
+<text x="1514" y="742" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" fill="#7A6A1D" text-anchor="start" font-style="normal">7.</text>
+<text x="1534" y="742" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#222" text-anchor="start" font-style="normal">U1 has only two GND pins (one per header, common inside the board). U5's ground uses the one next to VIN; all other grounds use a breadboard − rail tied to the GND pin next to 3V3.</text>
+<text x="1514" y="802" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" fill="#7A6A1D" text-anchor="start" font-style="normal">8.</text>
+<text x="1534" y="802" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#222" text-anchor="start" font-style="normal">Tags with the same name are one connection: tie every +3V3 tag to one breadboard + rail and every GND tag to the − rail.</text>
+<text x="1514" y="852" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" fill="#7A6A1D" text-anchor="start" font-style="normal">9.</text>
+<text x="1534" y="852" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#222" text-anchor="start" font-style="normal">U2 and U3 signals are 3.3 V only. Never connect U2 to 5 V.</text>
 <rect x="40" y="1222" width="900" height="112" rx="6" fill="#fff" stroke="#9AA7B8" stroke-width="1.4"/>
 <text x="54" y="1246" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="12.5" font-weight="bold" fill="#5B6573" text-anchor="start" font-style="normal">NET COLOUR KEY</text>
 <line x1="54.0" y1="1270" x2="90.0" y2="1270" stroke="#B71C1C" stroke-width="3.2" stroke-linecap="round"/>
@@ -325,6 +315,6 @@
 <rect x="1320" y="1222" width="540" height="112" rx="4" fill="#fff" stroke="#1F3A5F" stroke-width="2"/>
 <text x="1336" y="1250" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="19" font-weight="bold" fill="#1F3A5F" text-anchor="start" font-style="normal">Project Verona</text>
 <text x="1336" y="1274" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" fill="#222" text-anchor="start" font-style="normal">Romeo (Transmitter) — Circuit Diagram</text>
-<text x="1336" y="1296" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" fill="#5B6573" text-anchor="start" font-style="normal">Sheet 1 of 2 · Rev 1.0 · 15 Nov 2026</text>
+<text x="1336" y="1296" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" fill="#5B6573" text-anchor="start" font-style="normal">Sheet 1 of 2 · Rev 1.1 · 15 Nov 2026</text>
 <text x="1336" y="1316" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" fill="#5B6573" text-anchor="start" font-style="normal">Board: ESP32 Dev Module · all logic 3.3 V</text>
 </svg>
