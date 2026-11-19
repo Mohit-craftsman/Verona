@@ -1,0 +1,95 @@
+name: Bug Report
+description: Report a hardware or firmware issue in Project Verona
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting an issue! Before submitting, please check [LIMITATIONS.md](https://github.com/Mohit-craftsman/Verona/blob/main/LIMITATIONS.md) and our hardware troubleshooting guides.
+
+  - type: dropdown
+    id: node
+    attributes:
+      label: Which node is affected?
+      description: Select the node experiencing the issue.
+      options:
+        - Romeo (Field Transmitter)
+        - Juliet (Base Station Receiver)
+        - Both nodes
+        - I²C Scanner
+    validations:
+      required: true
+
+  - type: input
+    id: firmware_version
+    attributes:
+      label: Firmware Revision
+      placeholder: e.g. 1.1
+    validations:
+      required: true
+
+  - type: input
+    id: hardware_revision
+    attributes:
+      label: Board Model / Hardware Revision
+      description: e.g. DOIT ESP32 DevKit V1 (30-pin), NodeMCU-32S, TTGO LoRa32, Ra-02 v1.0
+      placeholder: e.g. ESP32 Dev Module (30-pin) + Ai-Thinker Ra-02 433 MHz
+    validations:
+      required: true
+
+  - type: dropdown
+    id: toolchain
+    attributes:
+      label: Development Toolchain
+      description: Which environment did you use to build and upload firmware?
+      options:
+        - PlatformIO
+        - Arduino IDE
+        - Both
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: Describe the exact sequence of actions leading up to the fault.
+      placeholder: |
+        1. Powered Romeo from 3.7V Li-ion battery through MT3608 boost converter.
+        2. Connected USB Serial Monitor at 9600 baud.
+        3. Observed startup output...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_vs_actual
+    attributes:
+      label: Expected vs. Actual Behaviour
+      description: What did you expect to happen, and what happened instead?
+      placeholder: Expected LCD to show coordinates; instead it printed 'LoRa Error' and froze.
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Serial Monitor Log
+      description: Paste relevant Serial Monitor log output at 9600 baud (wrap in triple backticks ```).
+      placeholder: |
+        ```text
+        [Paste Serial output here]
+        ```
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Pre-submission Checklist
+      options:
+        - label: I have searched existing issues to ensure this has not already been reported.
+          required: true
+        - label: I have read [LIMITATIONS.md](https://github.com/Mohit-craftsman/Verona/blob/main/LIMITATIONS.md) and verified this is not an intentional architectural boundary.
+          required: true
+        - label: I have consulted the relevant troubleshooting guide ([TROUBLESHOOTING_ROMEO.md](https://github.com/Mohit-craftsman/Verona/blob/main/TROUBLESHOOTING_ROMEO.md) or [TROUBLESHOOTING_JULIET.md](https://github.com/Mohit-craftsman/Verona/blob/main/TROUBLESHOOTING_JULIET.md)).
+          required: true
