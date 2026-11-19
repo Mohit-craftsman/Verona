@@ -27,8 +27,8 @@
 #define LCD_SDA    21
 #define LCD_SCL    22
 
-// Change 0x27 to 0x3F if the screen stays blank
-LiquidCrystal_I2C lcd(0x27, 16, 2);
+// Address confirmed by I2C scanner
+LiquidCrystal_I2C lcd(0x26, 16, 2);
 
 void setup() {
   Serial.begin(9600);

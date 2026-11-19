@@ -6,9 +6,9 @@
 // (Here I am), prints the position on the Serial Monitor and shows it on the LCD.
 //
 // Wiring:
-//   LoRa  NSS->GPIO5 (D5)  RST->GPIO14 (D14)  DIO0->GPIO26 (D26)
-//         SCK->GPIO18 (D18) MISO->GPIO19 (D19) MOSI->GPIO23 (D23)
-//   LCD   GND->GND  VCC->VIN (5 V)  SDA->GPIO21 (D21)  SCL->GPIO22 (D22)
+//   LoRa  NSS->GPIO5  RST->GPIO14  DIO0->GPIO26
+//         SCK->GPIO18 MISO->GPIO19 MOSI->GPIO23
+//   LCD   GND->GND  VCC->VIN (5 V)  SDA->GPIO21  SCL->GPIO22
 //
 // Library needed: LiquidCrystal I2C (Frank de Brabander)
 
@@ -27,8 +27,8 @@
 #define LCD_SDA    21
 #define LCD_SCL    22
 
-// Default I2C address is 0x27 (change to 0x3F if screen stays blank)
-LiquidCrystal_I2C lcd(0x27, 16, 2);
+// Address confirmed by I2C scanner
+LiquidCrystal_I2C lcd(0x26, 16, 2);
 
 void setup() {
   Serial.begin(9600);

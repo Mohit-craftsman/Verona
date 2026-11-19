@@ -161,7 +161,7 @@ Refer to schematic: `docs/Juliet_Circuit_Diagram.svg` and hardware photo below:
      Project Verona
      Waiting LoRa...
      ```
-   * *If LCD is blank or shows white boxes:* Gently turn the blue trimpot on the back of the I2C backpack until text appears. If still blank, change `LCD_ADDR` from `0x27` to `0x3F`.
+   * *If LCD is blank or shows white boxes:* Gently turn the blue trimpot on the back of the I2C backpack until text appears. If still blank, verify the I2C address (set to `0x26` in code as confirmed by scanner; standard modules may use `0x27` or `0x3F`).
 
 2. **Romeo First Boot:**
    * Attach the 433 MHz antenna and ceramic GPS antenna.
@@ -189,6 +189,6 @@ Refer to schematic: `docs/Juliet_Circuit_Diagram.svg` and hardware photo below:
 | :--- | :--- | :--- |
 | **"Starting LoRa failed!" on boot** | Loose wiring on SPI lines (D5, D18, D19, D23, D14, D26) | Double check jumper wires. Ensure Ra-02 is connected to 3.3V, NOT 5V. |
 | **LCD displays black/white blocks** | Contrast potentiometer out of calibration | Rotate the blue trimmer screw on the LCD back until characters become clear. |
-| **LCD I2C bus not detected** | Incorrect I2C address | Run an I2C scanner sketch. Default is `0x27`; some modules use `0x3F`. |
+| **LCD I2C bus not detected** | Incorrect I2C address | Run an I2C scanner sketch. Confirmed address for this build is `0x26`; other PCF8574 backpacks use `0x27` or `0x3F`. |
 | **GPS shows "Waiting for fix..." indefinitely** | Indoors with no line-of-sight to satellites | Move the GPS patch antenna outdoors under clear sky. Ensure patch antenna is facing UP. |
 | **Romeo brownouts/resets during transmission** | Voltage dip when LoRa transmits at +17 dBm | Add the 100 µF electrolytic capacitor across 3.3V and GND rails near the Ra-02. |
