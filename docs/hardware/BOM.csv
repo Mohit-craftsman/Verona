@@ -1,0 +1,19 @@
+Node,Component,Specification,Quantity,Notes
+Romeo,ESP32 Dev Module (U1),"Dual Core Xtensa 240MHz, 30/38-pin",1,Central processing & telemetry controller
+Romeo,Ai-Thinker Ra-02 (U2),"Semtech SX1278, 433 MHz, SPI",1,Long-range RF transceiver
+Romeo,GY-GPS6MV2 (U3),u-blox NEO-6M / NEO-7M GPS,1,Position sensor (NMEA 9600 baud)
+Romeo,Li-ion Battery (BT1),"3.7 V, 1000 mAh+ (18650 or LiPo)",1,Portable DC power source
+Romeo,TP4056 Board (U4),Type-C USB with battery protection,1,Constant-current / constant-voltage charging
+Romeo,SPST Switch (SW1),Slide or toggle rated 1A+,1,System power toggle (OFF during charging)
+Romeo,MT3608 Module (U5),DC-DC Step-Up (boost to 5.00 V),1,Voltage booster to ESP32 VIN
+Romeo,Electrolytic Cap (C1),"100 µF, 10V+",1,Decoupling buffer across Ra-02 3V3/GND
+Romeo,u.FL Antenna Cable (J1),IPEX (u.FL) RF pigtail with integrated element,1,Primary 433 MHz RF antenna (attached by default)
+Romeo,Rubber-Duck Antenna (ANT1),433 MHz SMA whip antenna (50 Ω),1,Optional: External high-gain antenna for extended range
+Romeo,Ceramic Antenna (ANT2),Patch antenna with u.FL cable,1,GPS satellite reception antenna
+Juliet,ESP32 Dev Module (U1),"Dual Core Xtensa 240MHz, 30/38-pin",1,Base station controller
+Juliet,Ai-Thinker Ra-02 (U2),"Semtech SX1278, 433 MHz, SPI",1,Long-range RF transceiver
+Juliet,16x2 LCD Display (U3),HD44780 + PCF8574 I2C backpack (5V),1,On-station coordinates display
+Juliet,Electrolytic Cap (C1),"100 µF, 10V+",1,Decoupling buffer across Ra-02 3V3/GND
+Juliet,u.FL Antenna Cable (J1),IPEX (u.FL) RF pigtail with integrated element,1,Primary 433 MHz RF antenna (attached by default)
+Juliet,Rubber-Duck Antenna (ANT1),433 MHz SMA whip antenna (50 Ω),1,Optional: External high-gain antenna for base station
+Juliet,USB Cable (J3),Micro-USB or USB-C data cable,1,5V PC power & serial telemetry link
