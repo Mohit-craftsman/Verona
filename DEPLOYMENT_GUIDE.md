@@ -57,7 +57,7 @@ This guide walks you through safely assembling, calibrating, wiring, and flashin
 
 ### Node A: Romeo (Transmitter)
 
-Refer to schematic: `docs/Romeo_Circuit_Diagram.svg` and hardware photo below:
+Refer to schematic: [`docs/hardware/Romeo_Circuit_Diagram.svg`](docs/hardware/Romeo_Circuit_Diagram.svg) and hardware photo below:
 
 <p align="center">
   <img src="docs/images/romeo_transmitter_top.jpg" alt="Romeo Hardware Breadboard Wiring" width="85%">
@@ -89,7 +89,7 @@ Refer to schematic: `docs/Romeo_Circuit_Diagram.svg` and hardware photo below:
 
 ### Node B: Juliet (Receiver & Base Station)
 
-Refer to schematic: `docs/Juliet_Circuit_Diagram.svg` and hardware photo below:
+Refer to schematic: [`docs/hardware/Juliet_Circuit_Diagram.svg`](docs/hardware/Juliet_Circuit_Diagram.svg) and hardware photo below:
 
 <p align="center">
   <img src="docs/images/juliet_receiver_top.jpg" alt="Juliet Hardware Breadboard Wiring" width="85%">
@@ -143,7 +143,7 @@ Refer to schematic: `docs/Juliet_Circuit_Diagram.svg` and hardware photo below:
    * **LiquidCrystal_I2C** by *Frank de Brabander* (v1.1.2)
 4. Flash Romeo:
    * Open `firmware/Romeo/Romeo.ino`
-   * Select Board: `DOIT ESP32 DEVKIT V1` (or your model)
+   * Select Board: `DOIT ESP32 DEVKIT V1` (or your ESP32 model)
    * Click **Upload**
 5. Flash Juliet:
    * Open `firmware/Juliet/Juliet.ino`

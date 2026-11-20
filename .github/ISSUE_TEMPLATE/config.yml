@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📖 Hardware Deployment Guide
+    url: https://github.com/Mohit-craftsman/Verona/blob/main/DEPLOYMENT_GUIDE.md
+    about: Review assembly, wiring, and MT3608 boost converter calibration steps.
+  - name: ⚖️ Engineering Scope & Limitations
+    url: https://github.com/Mohit-craftsman/Verona/blob/main/LIMITATIONS.md
+    about: Read about documented RF propagation, TTFF, and cleartext limitations.
+  - name: 🔍 Romeo Troubleshooting Guide
+    url: https://github.com/Mohit-craftsman/Verona/blob/main/TROUBLESHOOTING_ROMEO.md
+    about: Fix GPS fix acquisition, SPI LoRa initialization, and battery brownouts.
+  - name: 🔍 Juliet Troubleshooting Guide
+    url: https://github.com/Mohit-craftsman/Verona/blob/main/TROUBLESHOOTING_JULIET.md
+    about: Fix I2C LCD contrast, address conflicts, and signal margin issues.

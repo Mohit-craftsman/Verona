@@ -1,0 +1,53 @@
+name: Feature Request
+description: Propose a new feature, hardware enhancement, or protocol upgrade
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting an improvement to Project Verona! Please provide as much technical context as possible.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: Is your feature request related to an operational limitation or missing capability?
+      placeholder: A clear and concise description of the limitation or use case.
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: Describe the technical implementation you would like to see.
+      placeholder: Detailed description of the proposed firmware, schematic, or protocol change.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Did you consider alternative designs or off-the-shelf components?
+      placeholder: Other solutions, pinouts, or RF modules considered.
+
+  - type: dropdown
+    id: node_affected
+    attributes:
+      label: Affected Subsystem / Node
+      options:
+        - Romeo (Field Transmitter)
+        - Juliet (Base Station Receiver)
+        - Both Nodes (Protocol / Shared Config)
+        - Documentation / Hardware Schematics
+        - Build Toolchain / CI Automation
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: willingness
+    attributes:
+      label: Contribution
+      options:
+        - label: I am willing to submit a pull request implementing this feature.

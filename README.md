@@ -3,12 +3,11 @@
 # 📡 Project Verona
 ### Long-Range Off-Grid GPS Telemetry & Base Station System
 
-[![ESP32](https://img.shields.io/badge/Platform-ESP32-E7352C?style=for-the-badge&logo=espressif&logoColor=white)](https://www.espressif.com/)
-[![LoRa 433MHz](https://img.shields.io/badge/RF-SX1278%20433MHz-005B96?style=for-the-badge)](https://www.semtech.com/products/wireless-rf/lora-connect/sx1278)
-[![GPS](https://img.shields.io/badge/Sensor-u--blox%20NEO--6M-008080?style=for-the-badge)](https://www.u-blox.com/)
-[![PlatformIO](https://img.shields.io/badge/IDE-PlatformIO-orange?style=for-the-badge&logo=platformio&logoColor=white)](https://platformio.org/)
-[![Arduino](https://img.shields.io/badge/Framework-Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white)](https://www.arduino.cc/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+[![PlatformIO](https://img.shields.io/badge/IDE-PlatformIO-orange?style=flat-square&logo=platformio&logoColor=white)](https://platformio.org/)
+[![ESP32](https://img.shields.io/badge/Platform-ESP32-E7352C?style=flat-square&logo=espressif&logoColor=white)](https://www.espressif.com/)
+[![LoRa 433MHz](https://img.shields.io/badge/RF-SX1278%20433MHz-005B96?style=flat-square)](https://www.semtech.com/products/wireless-rf/lora-connect/sx1278)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
+[![CI](https://img.shields.io/github/actions/workflow/status/Mohit-craftsman/Verona/platformio.yml?label=CI&style=flat-square)](https://github.com/Mohit-craftsman/Verona/actions/workflows/platformio.yml)
 
 <p align="center">
   <b>A reliable, off-grid telemetry link named after Shakespeare's star-crossed lovers.</b><br>
@@ -16,7 +15,9 @@
   while <b>Juliet</b> (base station receiver) listens, acknowledges, and renders real-time telemetry on an LCD.
 </p>
 
-[Quickstart](#-quickstart--flashing-guide) • [Hardware Showcase](#-hardware-showcase--circuit-schematics) • [Romeo Troubleshooting](TROUBLESHOOTING_ROMEO.md) • [Juliet Troubleshooting](TROUBLESHOOTING_JULIET.md) • [Deployment Guide](DEPLOYMENT_GUIDE.md) • [Limitations](LIMITATIONS.md)
+> ℹ️ *Note: Project Verona is an open-source hardware telemetry system and is not affiliated with Microsoft's Verona research programming language.*
+
+[Quickstart](#-quickstart--flashing-guide) • [Hardware Showcase](#-hardware-showcase--circuit-schematics) • [Contributing](CONTRIBUTING.md) • [Changelog](CHANGELOG.md) • [Security](SECURITY.md) • [Romeo Troubleshooting](TROUBLESHOOTING_ROMEO.md) • [Juliet Troubleshooting](TROUBLESHOOTING_JULIET.md) • [Deployment Guide](DEPLOYMENT_GUIDE.md) • [Limitations](LIMITATIONS.md)
 
 ---
 
@@ -24,6 +25,7 @@
 
 ## 📑 Table of Contents
 - [📖 Overview & Operational Narrative](#-overview--operational-narrative)
+- [✨ Key Features](#-key-features)
 - [🎯 Problem Statement](#-problem-statement)
 - [💡 Proposed Solution](#-proposed-solution)
 - [📸 Hardware Showcase & Circuit Schematics](#-hardware-showcase--circuit-schematics)
@@ -33,6 +35,7 @@
 - [🚀 Quickstart & Flashing Guide](#-quickstart--flashing-guide)
 - [🔍 Hardware Troubleshooting Guides](#-hardware-troubleshooting-guides)
 - [📂 Project Structure](#-project-structure)
+- [🤝 Contributing](#-contributing)
 - [⚖️ Engineering Scope & Limitations](#️-engineering-scope--limitations)
 - [🔮 Future Scope & Roadmap](#-future-scope--roadmap)
 - [📄 License & Authors](#-license--authors)
@@ -46,6 +49,18 @@ Modern search-and-rescue, wilderness trekking, drone recovery, and agricultural 
 **Project Verona** solves this problem by pairing low-power sub-GHz **SX1278 LoRa (433 MHz)** radio transceivers with high-performance **ESP32 dual-core microcontrollers**:
 * **Romeo (Remote Mobile Tracker):** Operates untethered on a single-cell Li-ion battery (3.7V boosted to 5.0V via MT3608). It ingests real-time NMEA sentences from a u-blox GPS module over hardware UART. Once a verified satellite lock is achieved, Romeo encapsulates its latitude and longitude into an RF packet and broadcasts across the ISM band: *"Wherefore art thou?"*
 * **Juliet (Fixed Base Station):** Powered continuously via USB. Juliet monitors the 433 MHz channel. Upon capturing Romeo's packet, Juliet verifies packet integrity, extracts geographic coordinates, computes the signal RSSI / SNR, renders the live position to an HD44780 16x2 I2C LCD display, outputs telemetry to the host workstation over serial, and instantly returns an `ACK` packet: *"Here I am."*
+
+---
+
+## ✨ Key Features
+
+* **Sub-GHz Long-Range Telemetry:** Point-to-point Semtech SX1278 LoRa radio link operating on the license-free 433 MHz ISM band with configurable Spreading Factor ($SF=7$), 125 kHz bandwidth, and isolated sync word (`0xF3`).
+* **Autonomous GPS Acquisition:** Continuous NMEA sentence parsing via a u-blox NEO-6M / NEO-7M module over hardware UART (`D32`/`D33`), transmitting coordinates with 6-decimal floating-point precision.
+* **Stop-and-Wait ARQ Handshake:** Bidirectional telemetry protocol where Romeo broadcasts coordinates (`PING,<lat>,<lon>`) and verifies receipt against Juliet's immediate acknowledgment (`ACK`) within a 1500 ms timeout window.
+* **Real-Time Signal Margin Diagnostics:** Automatic computation and serial telemetry logging of Packet RSSI (dBm) and SNR (dB) for immediate RF link budget assessment in the field.
+* **On-Station Visual Display:** Dedicated HD44780 16x2 LCD display on Juliet via PCF8574 I2C backpack (confirmed address `0x26`) rendering coordinates without needing a workstation or laptop.
+* **Autonomous Field Power Delivery:** Untethered battery operation on Romeo via 3.7V Li-ion cell, TP4056 USB-C charging with over-discharge protection, SPST power isolation switch, and MT3608 boost converter calibrated to 5.00V.
+* **Dual Toolchain Ecosystem:** Complete build and flashing support for professional PlatformIO multi-environment workflows (`romeo`, `juliet`, `i2c_scan`) and beginner-accessible Arduino IDE sketches (`firmware/`).
 
 ---
 
@@ -120,9 +135,9 @@ The mobile field tracker captures satellite fixes via GPS, formats telemetry pac
 
 #### 📐 Circuit Schematic (Rev 1.1)
 The full vector circuit schematic is located in the repository at:
-* 📁 **[`docs/Romeo_Circuit_Diagram.svg`](docs/Romeo_Circuit_Diagram.svg)**
+* 📁 **[`docs/hardware/Romeo_Circuit_Diagram.svg`](docs/hardware/Romeo_Circuit_Diagram.svg)**
 
-*(For full wiring netlists, pin mappings, and electrical analysis, see [`docs/Circuit_Documentation.md`](docs/Circuit_Documentation.md))*
+*(For full wiring netlists, pin mappings, and electrical analysis, see [`docs/hardware/Circuit_Documentation.md`](docs/hardware/Circuit_Documentation.md))*
 
 ---
 
@@ -144,13 +159,15 @@ The USB-powered base station listens for incoming LoRa broadcasts, validates CRC
 
 #### 📐 Circuit Schematic (Rev 1.1)
 The full vector circuit schematic is located in the repository at:
-* 📁 **[`docs/Juliet_Circuit_Diagram.svg`](docs/Juliet_Circuit_Diagram.svg)**
+* 📁 **[`docs/hardware/Juliet_Circuit_Diagram.svg`](docs/hardware/Juliet_Circuit_Diagram.svg)**
 
-*(For full wiring netlists, pin mappings, and electrical analysis, see [`docs/Circuit_Documentation.md`](docs/Circuit_Documentation.md))*
+*(For full wiring netlists, pin mappings, and electrical analysis, see [`docs/hardware/Circuit_Documentation.md`](docs/hardware/Circuit_Documentation.md))*
 
 ---
 
 ## 🛠️ Hardware Stack & Bill of Materials
+
+> 📥 **Machine-Readable BOM:** A complete tabular CSV export of all hardware components is available at [`docs/hardware/BOM.csv`](docs/hardware/BOM.csv).
 
 ### Romeo (Transmitter Node)
 
@@ -268,11 +285,22 @@ Dedicated, field-tested troubleshooting documents are available for both nodes:
 
 ```text
 Verona/
-├── .gitignore                      # Git exclusion rules
-├── LICENSE                         # MIT open-source license
-├── README.md                       # Main architectural documentation & overview
+├── .github/                        # CI workflows and issue / PR templates
+│   ├── workflows/platformio.yml    # PlatformIO automated build matrix
+│   ├── ISSUE_TEMPLATE/             # Structured bug and feature request forms
+│   │   ├── bug_report.yml
+│   │   ├── feature_request.yml
+│   │   └── config.yml
+│   └── PULL_REQUEST_TEMPLATE.md    # Pre-submission verification checklist
+├── .gitignore                      # Git and build artifact exclusion rules
+├── CHANGELOG.md                    # Keep a Changelog & SemVer release history
+├── CODE_OF_CONDUCT.md              # Community standards & Contributor Covenant v2.1
+├── CONTRIBUTING.md                 # Contribution guidelines & development guide
 ├── DEPLOYMENT_GUIDE.md             # Hardware assembly, MT3608 calibration & flashing guide
+├── LICENSE                         # MIT open-source license
 ├── LIMITATIONS.md                  # Honest engineering design scope & boundaries
+├── README.md                       # Main architectural documentation & overview
+├── SECURITY.md                     # Security policy & radio link vulnerability scope
 ├── TROUBLESHOOTING_ROMEO.md        # Dedicated Romeo (Transmitter) troubleshooting guide
 ├── TROUBLESHOOTING_JULIET.md       # Dedicated Juliet (Receiver) troubleshooting guide
 ├── platformio.ini                  # Multi-environment PlatformIO build configuration
@@ -288,18 +316,32 @@ Verona/
 │   └── Juliet/
 │       └── Juliet.ino              # Juliet Arduino sketch
 ├── docs/                           # Schematics, images and technical documentation
-│   ├── images/                     # Real hardware prototype photography
-│   │   ├── romeo_transmitter_top.jpg
-│   │   ├── romeo_transmitter_side.jpg
-│   │   ├── romeo_power_supply.jpg
-│   │   ├── juliet_receiver_top.jpg
-│   │   └── juliet_receiver_side.jpg
-│   ├── Romeo_Circuit_Diagram.svg   # Romeo schematic (Rev 1.1)
-│   ├── Juliet_Circuit_Diagram.svg  # Juliet schematic (Rev 1.1)
-│   └── Circuit_Documentation.md    # Detailed circuit analysis & electrical notes
+│   ├── hardware/                   # Hardware schematics, netlists & BOM
+│   │   ├── Romeo_Circuit_Diagram.svg
+│   │   ├── Juliet_Circuit_Diagram.svg
+│   │   ├── Circuit_Documentation.md
+│   │   └── BOM.csv
+│   └── images/                     # Real hardware prototype photography
+│       ├── romeo_transmitter_top.jpg
+│       ├── romeo_transmitter_side.jpg
+│       ├── romeo_power_supply.jpg
+│       ├── juliet_receiver_top.jpg
+│       └── juliet_receiver_side.jpg
 └── tools/                          # Automation scripts
     └── gen_diagrams.py             # Python script for generating SVG schematics
 ```
+
+---
+
+## 🤝 Contributing
+
+We welcome community contributions, hardware validation reports, and firmware optimizations!
+
+* 📖 Review our [Contributing Guidelines](CONTRIBUTING.md) to set up your development environment.
+* 📜 Adhere to our [Code of Conduct](CODE_OF_CONDUCT.md).
+* 🐛 [Open a Bug Report](https://github.com/Mohit-craftsman/Verona/issues/new?template=bug_report.yml) or 💡 [Submit a Feature Request](https://github.com/Mohit-craftsman/Verona/issues/new?template=feature_request.yml).
+* 🔒 For security disclosures, see our [Security Policy](SECURITY.md).
+* 📋 Track ongoing and historical updates in the [Changelog](CHANGELOG.md).
 
 ---
 
@@ -328,4 +370,4 @@ In the spirit of honest and transparent engineering, Project Verona documents al
 
 Project Verona is distributed under the **MIT License**. See [LICENSE](LICENSE) for details.
 
-Developed with ❤️ for open-source hardware, radio telemetry enthusiasts, and search-and-rescue teams.
+Developed with ❤️ by [Mohit](mailto:mohitsihagg@gmail.com) for open-source hardware, radio telemetry enthusiasts, and search-and-rescue teams.

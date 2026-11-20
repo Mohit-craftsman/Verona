@@ -56,7 +56,7 @@ U1 ESP32 Dev Module, U2 Ra-02 on breakout, U3 16x2 LCD with I2C backpack (HD4478
 | I2C_SCL | U3 SCL, U1 D22 (GPIO22) |
 | RF_LORA | U2 u.FL, J1, ANT1 |
 
-The LCD backpack pulls SDA and SCL up to its own supply (5 V here). This usually works with an ESP32 but exceeds its 3.3 V pin rating. A 0.96 inch SSD1306 OLED on 3V3 (same four wires) avoids this. The I2C address is 0x27 on most backpacks, 0x3F on some.
+The LCD backpack pulls SDA and SCL up to its own supply (5 V here). This usually works with an ESP32 but exceeds its 3.3 V pin rating. A 0.96 inch SSD1306 OLED on 3V3 (same four wires) avoids this. The I2C address is 0x26 on verified Project Verona hardware (0x27 on most standard backpacks, 0x3F on some).
 
 ## 3. Circuit analysis
 

@@ -4,3 +4,21 @@
 .vscode/launch.json
 .vscode/ipch
 *.local
+
+# Arduino IDE build outputs
+build/
+*.bin
+*.elf
+*.hex
+
+# Editor and OS files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# Python bytecode and temporary caches
+__pycache__/
+*.py[cod]
+*$py.class
