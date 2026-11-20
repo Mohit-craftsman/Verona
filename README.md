@@ -370,4 +370,4 @@ In the spirit of honest and transparent engineering, Project Verona documents al
 
 Project Verona is distributed under the **MIT License**. See [LICENSE](LICENSE) for details.
 
-Developed with ❤️ for open-source hardware, radio telemetry enthusiasts, and search-and-rescue teams.
+Developed with ❤️ by [Mohit](mailto:mohitsihagg@gmail.com) for open-source hardware, radio telemetry enthusiasts, and search-and-rescue teams.
