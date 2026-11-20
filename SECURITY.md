@@ -27,8 +27,7 @@ If you discover a software bug that compromises local device operation (such as 
 ### Disclosure Process
 
 1. **Do not open a public issue.**
-2. Send an email to the project maintainers:
-   `<!-- TODO(owner): add contact email or security advisory channel -->`
+2. Send an email to the project maintainer at [mohitsihagg@gmail.com](mailto:mohitsihagg@gmail.com).
 3. Include detailed information:
    * Affected node (`Romeo`, `Juliet`, or core library).
    * Exact steps to reproduce the exploit or fault.
